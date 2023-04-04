@@ -5,35 +5,35 @@ void main(){
   runApp(MyApp());
 }
 
-class password extends StatefulWidget {
-  const password({Key? key}) : super(key: key);
+class Home extends StatefulWidget {
+  const Home({Key? key}) : super(key: key);
 
   @override
-  State<password> createState() => _HomeState();
+  State<Home> createState() => _HomeState();
 }
 
-class _HomeState extends State<password> {
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.pink,
       appBar: AppBar(),
+      backgroundColor: Colors.cyanAccent,
       body: SafeArea(
         child: Center(
           child: Column(
             children: [
               const Text(
-                'Change Password',
+                'Home',
                 style: TextStyle(
-                  color: Colors.greenAccent,
+                  color: Colors.blueAccent,
                   fontWeight: FontWeight.bold,
-                  fontSize: 15,
+                  fontSize: 20,
                 ),
               ),
 
 
-
               TextButton(onPressed: () {
+                Navigator.pop(context);
                 Navigator.pop(context);
               },
                   child: Text('Go Back',
@@ -47,9 +47,9 @@ class _HomeState extends State<password> {
                   )
               ),
 
-
             ],
           ),
+
         ),
       ),
     );

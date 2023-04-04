@@ -4,9 +4,7 @@ import 'package:demo/password.dart';
 import 'package:flutter/material.dart';
 import 'package:demo/Create_acc.dart';
 
-void main(){
-  runApp(MyApp());
-}
+
 
 class Login_page extends StatefulWidget {
   const Login_page({Key? key}) : super(key: key);
@@ -21,30 +19,24 @@ class _LoginState extends State<Login_page> {
     return Scaffold(
       backgroundColor: Colors.yellow[700],
       //appBar: AppBar(),
-      body: Container(
-        decoration: BoxDecoration(
-          border: Border.all(
-            color: Colors.white,
-            width: 2,
-          ),
-        ),
-        child: SafeArea(
+      body: SingleChildScrollView(
+        child: SizedBox(
+          height: MediaQuery.of(context).size.height,
           child: Center(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children:  [
-                Padding(
-                  padding: EdgeInsets.fromLTRB(20, 210, 10, 15),
-                  child: Text(
-                    'Welcome Back!',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 35,
-                    ),
-                  ),
-          ),
 
-                  Text(
+                const Text(
+                  'Welcome Back!',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 35,
+                  ),
+                ),
+
+                  const Text(
                   'Login to continue',
                   style: TextStyle(
                     color: Colors.white,
@@ -53,7 +45,7 @@ class _LoginState extends State<Login_page> {
                   ),
                 ),
 
-          Padding(
+          const Padding(
             padding: EdgeInsets.fromLTRB(40, 10, 50, 10),
                   child: TextField(
                     decoration: InputDecoration(
@@ -72,9 +64,10 @@ class _LoginState extends State<Login_page> {
           ),
 
 
-            Padding(
+            const Padding(
               padding: EdgeInsets.fromLTRB(40, 10, 50, 10),
               child: TextField(
+                obscureText: true,
                 decoration: InputDecoration(
                     hintText: 'Password',
                     hintStyle: TextStyle(fontSize: 18, color: Colors.white),
@@ -92,7 +85,7 @@ class _LoginState extends State<Login_page> {
 
 
                 const SizedBox(
-                width: 20.0, height: 30.0,
+               height: 30.0,
                 ),
 
 
@@ -103,7 +96,7 @@ class _LoginState extends State<Login_page> {
                       MaterialPageRoute(builder: (context) => const password()),
                     );
                   },
-                  child: Text('Forgot Password',
+                  child: const Text('Forgot Password',
                     style: TextStyle(
                       color: Colors.black,
                       decoration: TextDecoration.underline,
@@ -112,38 +105,37 @@ class _LoginState extends State<Login_page> {
                 ),
 
                 const SizedBox(
-                  width: 20.0, height: 30.0,
+                 height: 30.0,
                 ),
 
 
 
                 ElevatedButton(
-
                   onPressed: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => const Home()),
                     );
                   },
-
-                  child: Text('Login',
-                    style: TextStyle(
-                      fontSize: 22.0,
-                      color: Colors.white,
-                    ),
-                  ),
                   style: ElevatedButton.styleFrom(
                     primary: Colors.black,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30),
                     ),
                     minimumSize: Size(300,45),
                   ),
+
+                  child: const Text('Login',
+                    style: TextStyle(
+                      fontSize: 22.0,
+                      color: Colors.white,
+                    ),
+                  ),
                 ),
 
 
 
                 const SizedBox(
-                  width: 20.0, height: 100.0,
+                 height: 100.0,
                 ),
 
 
@@ -154,7 +146,7 @@ class _LoginState extends State<Login_page> {
                       MaterialPageRoute(builder: (context) => const create_acc()),
                     );
                   },
-                  child: Text('CREATE ACCOUNT',
+                  child: const Text('CREATE ACCOUNT',
                     style: TextStyle(
                       color: Colors.black,
                       decoration: TextDecoration.underline,
@@ -164,9 +156,30 @@ class _LoginState extends State<Login_page> {
               ],
             ),
           ),
-
         ),
       ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   selectedItemColor: Colors.white,
+      //   items: [
+      //     BottomNavigationBarItem(
+      //         icon: Icon(Icons.home),
+      //     label: 'Home',
+      //     ),
+      //
+      //     BottomNavigationBarItem(
+      //         icon: Icon(Icons.search),
+      //       label: 'Search',
+      //     ),
+      //     BottomNavigationBarItem(
+      //         icon: Icon(Icons.send),
+      //       label: 'Send',
+      //     ),
+      //   ],
+      //   backgroundColor: Colors.transparent,
+      //   currentIndex: 0,
+      //   elevation: 0,
+      //   showSelectedLabels: false,
+      // ),
     );
   }
 }

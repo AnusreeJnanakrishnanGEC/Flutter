@@ -1,35 +1,33 @@
 import 'package:demo/main.dart';
 import 'package:flutter/material.dart';
 
-void main(){
-  runApp(MyApp());
-}
 
-class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+class password extends StatefulWidget {
+  const password({Key? key}) : super(key: key);
 
   @override
-  State<Home> createState() => _HomeState();
+  State<password> createState() => _HomeState();
 }
 
-class _HomeState extends State<Home> {
+class _HomeState extends State<password> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.pink,
       appBar: AppBar(),
-      backgroundColor: Colors.cyanAccent,
       body: SafeArea(
         child: Center(
           child: Column(
             children: [
               const Text(
-                'Home',
+                'Change Password',
                 style: TextStyle(
-                  color: Colors.blueAccent,
+                  color: Colors.greenAccent,
                   fontWeight: FontWeight.bold,
-                  fontSize: 20,
+                  fontSize: 15,
                 ),
               ),
+
 
 
               TextButton(onPressed: () {
@@ -46,9 +44,9 @@ class _HomeState extends State<Home> {
                   )
               ),
 
+
             ],
           ),
-
         ),
       ),
     );

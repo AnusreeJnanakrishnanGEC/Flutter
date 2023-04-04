@@ -3,9 +3,6 @@ import 'package:demo/main.dart';
 import 'package:flutter/material.dart';
 import 'package:demo/Create_acc.dart';
 
-void main(){
-  runApp(MyApp());
-}
 
 class create_acc extends StatefulWidget {
   const create_acc({Key? key}) : super(key: key);
@@ -31,7 +28,7 @@ class _LoginState extends State<create_acc> {
           child: Center(
             child: Column(
               children:  [
-                Padding(
+                const Padding(
                   padding: EdgeInsets.fromLTRB(20, 210, 10, 15),
                   child: Text(
                     'Create Account',
@@ -45,7 +42,7 @@ class _LoginState extends State<create_acc> {
 
 
 
-                Padding(
+                const Padding(
                   padding: EdgeInsets.fromLTRB(40, 10, 50, 10),
                   child: TextField(
                     decoration: InputDecoration(
@@ -111,9 +108,8 @@ class _LoginState extends State<create_acc> {
 
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => const Home()),
-                    );
+                   // Navigator.pop(context);
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const Home()),);
                   },
                       child: Text('Create',
                         style: TextStyle(
